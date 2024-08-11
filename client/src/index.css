@@ -79,6 +79,10 @@
   font-style: normal;
 }
 
+.res{
+  flex: 1;
+}
+
 @media screen and (max-width : 750px) {
   .res{
     display: flex;
@@ -90,7 +94,10 @@
   .ls{
     width: 100%;
   }
-  
+  .res{
+    flex: 0;
+    width: 150px;
+  }
 }
 
 
