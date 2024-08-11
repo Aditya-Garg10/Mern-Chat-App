@@ -46,7 +46,7 @@ const Chat = () => {
           {fileDownloadProgress}%
         </div>)
       }
-      <div className='h-full sm:w-full'> <ContactsContainer/></div>
+      <div className='h-full'> <ContactsContainer/></div>
       
       
         
