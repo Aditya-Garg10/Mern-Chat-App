@@ -79,7 +79,7 @@
   font-style: normal;
 }
 
-@media screen and (max-width : 450px) {
+@media screen and (max-width : 750px) {
   .res{
     display: flex;
     flex-direction: column;
