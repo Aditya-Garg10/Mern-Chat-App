@@ -18,6 +18,14 @@ app.use(cors({
     credentials: true,
 }))
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://mern-chat-app-frontend-pri8.onrender.com'); // Update to match your client's domain
+    res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true'); // Allow cookies to be sent
+    next();
+  });
+
 
 
 const port = process.env.PORT
