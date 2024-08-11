@@ -62,7 +62,7 @@ export const Login = async(req,res,next) =>{
             expire,
             secure : true,
             sameSite : "None",
-        }).status(200).send({user:{
+        }).status(200).json({user:{
             id: user.id,
             email : user.email,
             firstName : user.firstName,
