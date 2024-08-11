@@ -79,7 +79,7 @@
   font-style: normal;
 }
 
-.res{
+.res2{
   flex: 1;
 }
 
@@ -94,7 +94,7 @@
   .ls{
     width: 100%;
   }
-  .res{
+  .res2{
     flex: 0;
     width: 150px;
   }

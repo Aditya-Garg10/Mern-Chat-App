@@ -121,7 +121,7 @@ const Messagebar = () => {
   return (
     <div className='h-[10vh]  bg-[#121212] flex justify-center items-center  px-8 sm:px-3 mb-6 gap-6'>
       <div className="flex flex-1 md:flex-0  px-5 bg-[#2a2b33] rounded-md items-center  pr-5 sm:gap-2 sm:pr-1">
-        <input type='text' value={Message} onChange={(e)=>setMessage(e.target.value)} className='  py-5 px-0 res  bg-transparent rounded-md focus:border-none focus:outline-none ' placeholder='Type something...'></input>
+        <input type='text' value={Message} onChange={(e)=>setMessage(e.target.value)} className='  py-5 px-0 res2  bg-transparent rounded-md focus:border-none focus:outline-none ' placeholder='Type something...'></input>
         <button className='text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 transition-all' onClick={handleAttachmentClick}> 
             <GrAttachment className='text-2xl'/>
             
