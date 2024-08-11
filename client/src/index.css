@@ -91,6 +91,8 @@
     width: 100%;
   }
   .med{
+    padding: 0;
+    gap: 0;
     
   }
 }
