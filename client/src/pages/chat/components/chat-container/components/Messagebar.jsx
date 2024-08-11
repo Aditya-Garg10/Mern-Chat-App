@@ -127,7 +127,7 @@ const Messagebar = () => {
             
         </button>
           <input type="file" className='hidden' ref={fileInputref} onChange={handleAttachmentChange} />
-        <button className='text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 me-5 transition-all'> 
+        <button className='text-neutral-500 pr-[5px] focus:border-none focus:outline-none focus:text-white duration-300 me-5 transition-all'> 
             <RiEmojiStickerLine className='text-2xl' onClick={()=>setemojiPrickerOpen(current=> !current)}/>            
         </button>
 
