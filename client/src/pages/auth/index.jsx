@@ -59,7 +59,7 @@ const Auth = () => {
     
     if(handleLoginValidate()){
       const response = await apiClient.post(LOGIN_ROUTE,{email,password},
-        { Headers : {
+        { headers : {
           "Access-Control-Allow-Origin": '*'
         },
           withCredentials : true}
