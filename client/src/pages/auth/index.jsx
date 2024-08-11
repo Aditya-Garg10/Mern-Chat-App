@@ -59,7 +59,10 @@ const Auth = () => {
     
     if(handleLoginValidate()){
       const response = await apiClient.post(LOGIN_ROUTE,{email,password},
-        {withCredentials : true}
+        { Headers : {
+          "Access-Control-Allow-Origin": '*'
+        },
+          withCredentials : true}
       )
       console.log(response)
       if(response.status === 204){
@@ -128,8 +131,8 @@ const Auth = () => {
                 <Button className="rounded-full p-6" onClick={handleLogin}>Login</Button>
               </TabsContent>
               <TabsContent value='signup' className='flex flex-col gap-5 '>
-              <Input placeholder="Email" type="email" className="rounded-full  p-6" value={email} onChange={(e)=> setemail(e.target.value)}></Input>
-                <Input placeholder="Password" type="password" className="rounded-full  p-6" value={password} onChange={(e)=> setpassword(e.target.value)}></Input>
+              <Input placeholder="Email"  type="email" className="rounded-full  p-6" value={email} onChange={(e)=> setemail(e.target.value)}></Input>
+                <Input placeholder="Password"  type="password" className="rounded-full  p-6" value={password} onChange={(e)=> setpassword(e.target.value)}></Input>
               <Input placeholder="Confirm Password" type="password" className="rounded-full  p-6" value={confirmpassword} onChange={(e)=> setconfirmpassword(e.target.value)}></Input>
               <Button className="rounded-full p-6" type="submit" onClick={handleSignup}>SignUp</Button>
               </TabsContent>
