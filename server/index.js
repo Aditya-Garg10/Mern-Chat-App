@@ -32,7 +32,7 @@ app.use(express.json());
 mongoose.connect(database).then(()=>console.log("MongoDB connected"))
 
 app.get("/",(req,res)=>{
-    res.send("Hello")
+    res.send("Helloi")
 })
 
 app.use("/api/auth",router);
