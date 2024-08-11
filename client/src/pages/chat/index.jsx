@@ -32,7 +32,7 @@ const Chat = () => {
     
   },[userInfo])
   return (
-    <div className='flex sm:flex-col bg-[#1c1d25] h-[100vh] text-white overflow-hidden'>
+    <div className='flex res bg-[#1c1d25] h-[100vh] text-white overflow-hidden'>
       {
         isuploading && (<div className='h-[100vh] w-[100vw] fixed top-0 z-10 left-0 bg-black/80 flex items-center justify-center flex-col gap-5 backdrop-blur-lg '>
           <h5 className='text-5xl animate-pulse'>Uploading Files</h5>
@@ -46,7 +46,7 @@ const Chat = () => {
           {fileDownloadProgress}%
         </div>)
       }
-      <div className='h-full w-full '> <ContactsContainer/></div>
+      <div className='h-full sm:w-full'> <ContactsContainer/></div>
       
       
         
