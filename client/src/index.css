@@ -85,3 +85,12 @@
     flex-direction: column;
   }
 }
+
+
+@media screen and (max-width : 1250px) {
+  .res{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
