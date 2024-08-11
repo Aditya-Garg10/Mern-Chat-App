@@ -87,6 +87,9 @@
   .empty{
     display: none;
   }
+  .ls{
+    width: 100%;
+  }
 }
 
 
