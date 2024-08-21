@@ -1,6 +1,6 @@
 import React, { useEffect ,useState} from 'react'
 import { Button } from './components/ui/button'
-import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Auth from './pages/auth'
 import Chat from './pages/chat'
 import Profile from './pages/profile'
@@ -25,7 +25,7 @@ const AuthRoute = ({ children }) => {
 }
 
 const App = () => {
-    const navigate = useNavigate();
+    
     const { userInfo , setUserInfo} = useAppStore()
     const [loading, setloading] = useState(true);
     
