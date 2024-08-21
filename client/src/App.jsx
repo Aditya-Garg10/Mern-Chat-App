@@ -64,7 +64,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/auth' element={
+          <Route path='/' element={
             <Auth />
           }></Route>
           <Route path='/chat' element={
@@ -77,7 +77,7 @@ const App = () => {
             <Profile />
           </PrivateRoute>}>
           </Route>
-          <Route path='*' element={<Navigate to="/auth" />}></Route>
+          <Route path='*' element={<Navigate to="/" />}></Route>
         </Routes>
       </BrowserRouter>
     </>
