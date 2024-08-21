@@ -70,9 +70,9 @@ const App = () => {
             </AuthRoute>            
           }></Route>
           <Route path='/chat' element={
-          <PrivateRoute>
+          
             <Chat />
-          </PrivateRoute>}>            
+          }>            
           </Route>
           <Route path='/profile' element={
           <PrivateRoute>
