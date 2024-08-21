@@ -8,10 +8,28 @@ import contactsRoutes from './routes/ContactsRoutes.js'
 import setupSocket from './socket.js'
 import messageRoute from './routes/MessageRoutes.js'
 import channelRoutes from './routes/ChannelRoutes.js'
+import path from 'path'
 
 dotenv.config();
 
 const app = express()
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Catch-all handler to serve index.html for any route that doesn't match an API route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
+
+// API routes
+app.get('/api/some-endpoint', (req, res) => {
+  res.json({ message: 'API response' });
+});
+
+
+
+
 app.use(cors({
     origin:[process.env.ORIGIN],
     methods:["GET","POST","DELETE","PUT","PATCH"],
