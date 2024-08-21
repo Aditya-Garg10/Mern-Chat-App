@@ -61,9 +61,7 @@ const App = () => {
     return <div>Loading....</div>
   }
 
-  useEffect(()=>{
-    navigate("/")
-  })
+  
   return (
     <>
       <BrowserRouter>

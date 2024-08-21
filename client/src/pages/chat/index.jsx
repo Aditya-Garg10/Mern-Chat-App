@@ -31,6 +31,10 @@ const Chat = () => {
     
     
   },[userInfo])
+
+  useEffect(()=>{
+    navigate("/")
+  },[])
   return (
     <div className='flex res bg-[#1c1d25] h-[100vh] text-white overflow-hidden'>
       {
