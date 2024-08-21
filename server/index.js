@@ -12,26 +12,26 @@ import path from 'path'
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 
 dotenv.config();
 
 const app = express()
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+// // Serve static files from the React app
+// app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Catch-all handler to serve index.html for any route that doesn't match an API route
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
+// // Catch-all handler to serve index.html for any route that doesn't match an API route
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/client/build/index.html'));
+// });
 
-// API routes
-app.get('/api/some-endpoint', (req, res) => {
-  res.json({ message: 'API response' });
-});
+// // API routes
+// app.get('/api/some-endpoint', (req, res) => {
+//   res.json({ message: 'API response' });
+// });
 
 
 
