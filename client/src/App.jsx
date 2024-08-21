@@ -77,7 +77,7 @@ const App = () => {
             <Profile />
           </PrivateRoute>}>
           </Route>
-          <Route path='*' element={<Navigate to="/auth" />}></Route>
+          <Route path='*' element={<Navigate to="/https://mern-chat-app-frontend-pri8.onrender.com" />}></Route>
         </Routes>
       </BrowserRouter>
     </>
