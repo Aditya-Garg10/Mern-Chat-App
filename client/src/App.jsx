@@ -77,7 +77,7 @@ const App = () => {
             <Profile />
           </PrivateRoute>}>
           </Route>
-          <Route path='*' element={<Navigate to="/" />}></Route>
+          <Route path='*' element={<Navigate to="/auth" />}></Route>
         </Routes>
       </BrowserRouter>
     </>
