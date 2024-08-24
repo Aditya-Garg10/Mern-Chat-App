@@ -34,7 +34,6 @@ const Auth = () => {
       toast.error("Password and Confirm Password Should be Same")
     } 
     else{
-
       return true;
     } 
 
