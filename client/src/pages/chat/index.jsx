@@ -46,10 +46,8 @@ const Chat = () => {
           {fileDownloadProgress}%
         </div>)
       }
-      <div className='h-full ls'> <ContactsContainer/></div>
-      
-      
-        
+
+      <div className='h-full w-full 2xl:1/4 lg:w-1/4'> <ContactsContainer/></div>  
      { selectedChatType === undefined ? ( <EmptyChatContainer/> ): (<ChatContainer/>)}
       
       

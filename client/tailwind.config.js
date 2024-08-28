@@ -14,7 +14,18 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        '2xl': {'max': '2035px'},
+      // => @media (max-width: 1535px) { ... }
+
+      'lg': {'max': '1023px'},
+      // => @media (max-width: 1023px) { ... }
+
+      'md': {'max': '850px'},
+      // => @media (max-width: 767px) { ... }
+
+      'sm': {'max': '650px'},
+      // => @media (max-width: 639px) { ... }
+      'xs' : {'max':'400px'}
       },
     },
     extend: {
