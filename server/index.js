@@ -37,19 +37,31 @@ const app = express()
 
 
 app.use(cors({
-    origin:[process.env.ORIGIN],
+    origin: [
+         process.env.ORIGIN,      
+        "http://localhost:5174",                
+      ],    
     methods:["GET","POST","DELETE","PUT","PATCH"],
     credentials: true,
 }))
 
+
+
+const allowedOrigins = [  
+    process.env.ORIGIN,      
+    "http://localhost:5174", 
+  ];
+  
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://mern-chat-app-sigma-liart.vercel.app'); // Update to match your client's domain
-    res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
-    res.header('Access-Control-Allow-Credentials', 'true'); // Allow cookies to be sent
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+      res.header("Access-Control-Allow-Origin", origin);
+    }
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
+    res.header("Access-Control-Allow-Credentials", "true");
     next();
   });
-
 
 
 const port = process.env.PORT
