@@ -85,6 +85,9 @@ const Messagebar = () => {
           formData.append("file",file);
           setIsuploading(true)
           const response = await apiClient.post(UPLOAD_FILE_ROUTE,formData,{withCredentials:true,
+            headers : {
+              "Access-Control-Allow-Origin": '*'
+            },
             onUploadProgress: data=>{
               setIsfileuploadProgress(Math.round((100*data.loaded)/data.total))
             }

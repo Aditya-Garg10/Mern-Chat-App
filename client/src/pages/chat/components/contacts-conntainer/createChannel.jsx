@@ -31,7 +31,9 @@ const createChannel = () => {
 
   useEffect(()=>{
     const getData = async () =>{
-        const response = await apiClient.get(GET_ALL_CONTACTS_ROUTE,{withCredentials:true})
+        const response = await apiClient.get(GET_ALL_CONTACTS_ROUTE,{withCredentials:true, headers : {
+          "Access-Control-Allow-Origin": '*'
+        },})
         setAllContacts(response.data.contacts)
     }
     getData()
@@ -44,7 +46,9 @@ const createChannel = () => {
           const response = await apiClient.post(CREATE_CHANNEL_ROUTES,{
             name: ChannelName,
             members:  selectedContacts.map((contact)=> contact.value)
-          },{withCredentials: true})
+          },{withCredentials: true, headers : {
+            "Access-Control-Allow-Origin": '*'
+          },})
 
           if(response.status === 200){
             setChannelName("")

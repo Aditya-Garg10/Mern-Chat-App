@@ -30,7 +30,9 @@ const Newdm = () => {
   const searchContact = async (searchTerm) => {
     try {
       if (searchTerm) {
-        const response = await apiClient.post(SEARCH_CONTACTS_ROUTE, { searchTerm }, { withCredentials: true });
+        const response = await apiClient.post(SEARCH_CONTACTS_ROUTE, { searchTerm }, { withCredentials: true, headers : {
+          "Access-Control-Allow-Origin": '*'
+        }, });
         
         if (response.status === 200 && response.data.contacts) {
           setsearchContacts(response.data.contacts)

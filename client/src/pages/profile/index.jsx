@@ -104,7 +104,9 @@ const Profile = () => {
       const formData = new FormData();
       formData.append("profile-image",file);
       formData.append("UserId",userInfo.id)
-      const response = await apiClient.post(ADD_PROFILE_IMAGE_ROUTE,formData,{withCredentials: true})
+      const response = await apiClient.post(ADD_PROFILE_IMAGE_ROUTE,formData,{withCredentials: true, headers : {
+        "Access-Control-Allow-Origin": '*'
+      },})
       if(response.status === 200 && response.data.image){
         
         setUserInfo({...userInfo,image: response.data.image})
@@ -118,7 +120,10 @@ const Profile = () => {
       try {
         const response = await apiClient.delete(REMOVE_PROFILE_IMAGE_ROUTE,{
           data: {UserId: userInfo.id},
-          withCredentials: true,          
+          withCredentials: true,    
+          headers : {
+            "Access-Control-Allow-Origin": '*'
+          },      
         },);
         if(response.status === 200){
           setUserInfo({...userInfo,image: null});
