@@ -64,9 +64,12 @@ const Profile = () => {
     
     if(validateProfile()){
       try {
-        const response =  await apiClient.post(UPDATE_PROFILE_ROUTE,{UserId: userInfo.id,firstName,lastName,color : selectedColor},{withCredentials:true});
-        if(response.status === 200 && response.data)
-                
+        const response =  await apiClient.post(UPDATE_PROFILE_ROUTE,{UserId: userInfo.id,firstName,lastName,color : selectedColor},{withCredentials:true
+          ,headers:{
+            "jwt" : localStorage.getItem("jwt")
+          }
+        });
+        if(response.status === 200 && response.data)                
         setUserInfo({...response.data})   
           toast.success("Profile Updated Successfully")
           navigate("/chat")                           

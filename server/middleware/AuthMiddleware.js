@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
-export const verifyToken = (req,res,next) =>{
-    const token = req.cookies.jwt;
+export const verifyToken = async(req,res,next) =>{
+    const token = await req.header("jwt");    
     // console.log(req.cookies)
     // console.log({token})
     if(!token) return res.status(401).json("You are not Authorized!");

@@ -7,7 +7,7 @@ import { GET_USER_INFO, HOST, LOGOUT_ROUTE } from '@/utils/constants'
 import React, { useEffect,useState } from 'react'
 import { FiEdit2 } from 'react-icons/fi'
 import {IoLogOut, IoPowerSharp} from 'react-icons/io5'
-import {useNavigate } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
 
@@ -20,17 +20,16 @@ const profileInfo = () => {
     
     const navigate = useNavigate()
     
-    const logout = async() =>{
-        try {
-            const response = await apiClient.post(LOGOUT_ROUTE,{},{withCredentials: true});
+    const logout = () =>{        
+            localStorage.removeItem("jwt") 
+            navigate("/auth") 
+                              
+            // const response = await apiClient.post(LOGOUT_ROUTE,{},{withCredentials: true});
 
-            if (response.status === 200){
-                navigate("/auth")
-                setUserInfo(null)
-            }
-        } catch (error) {
-            toast.error(error.message)
-        }
+            // if (response.status === 200){
+            //     setUserInfo(null)
+            // }
+       
     }
     return (
         <div className='relative bottom-0 h-16  flex items-center  justify-between p-4 w-full bg-[#121212]'>
@@ -61,9 +60,9 @@ const profileInfo = () => {
             <div className="flex gap-5">
                 <TooltipProvider>
                     <Tooltip>
-                        <TooltipTrigger> <IoPowerSharp onClick={logout} className='text-yellow-500 text-xl font-medium' /></TooltipTrigger>
+                        <TooltipTrigger> <a href="/auth"><IoPowerSharp onClick={logout} className='text-yellow-500 text-xl font-medium' /></a> </TooltipTrigger>
                         <TooltipContent className="bg-[#1c1b1e] text-white border-none ">
-                            Edit Profile
+                            Logout
                         </TooltipContent>
                     </Tooltip>
                 </TooltipProvider>

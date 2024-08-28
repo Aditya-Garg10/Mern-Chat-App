@@ -8,8 +8,6 @@ import EmptyChatContainer from './components/empty-chat-container'
 
 const Chat = () => {
 
-
-
   const { 
     userInfo,
     selectedChatType, 

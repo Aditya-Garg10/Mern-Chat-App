@@ -57,17 +57,18 @@ const Auth = () => {
   try {
     
     if(handleLoginValidate()){
-      const response = await apiClient.post(LOGIN_ROUTE,{email,password},
+      const response = await apiClient.post(LOGIN_ROUTE,{email,password},        
         { headers : {
           "Access-Control-Allow-Origin": '*'
         },
           withCredentials : true}
       )
-      console.log(response)
+      console.log("mess",response)
       if(response.status === 204){
         toast("Incorrect Credentials")        
       }
       else if(response.data.user.id){
+        localStorage.setItem("jwt",response.data.authtoken)
         setUserInfo(response.data.user)
         if(response.data.user.profileSetup){
           navigate("/chat")

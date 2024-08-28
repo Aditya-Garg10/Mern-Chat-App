@@ -19,7 +19,9 @@ const ContactsContainer = () => {
   useEffect(()=>{
 
    const getContacts = async()=>{
-    const response = await apiClient.get(GET_DM_CONTACTS_ROUTE,{withCredentials:true})
+    const response = await apiClient.get(GET_DM_CONTACTS_ROUTE,{withCredentials:true,headers:{
+      "jwt" : localStorage.getItem("jwt")
+    }})
     if(response.data.contacts){
       setDirectMessagesContacts(response.data.contacts)
       // console.log(directMessagesContacts)
@@ -27,7 +29,11 @@ const ContactsContainer = () => {
    }
 
    const getChannels = async()=>{
-    const response = await apiClient.get(GET_USER_CHANNEL_ROUTES,{withCredentials:true})
+    const response = await apiClient.get(GET_USER_CHANNEL_ROUTES,{withCredentials:true,
+      headers:{
+        "jwt" : localStorage.getItem("jwt")
+      }
+    })
     if(response.data.channel){
       setChannels(response.data.channel)            
     }

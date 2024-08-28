@@ -32,8 +32,10 @@ const App = () => {
   useEffect(()=>{
     const getUserData = async() =>{
       try {
-        const response = await apiClient.get(GET_USER_INFO,{
-          withCredentials: true,
+        const response = await apiClient.get(GET_USER_INFO,{                 
+          headers:{
+            "jwt" : localStorage.getItem("jwt")
+          }
         })
         if(response.status===200 && response.data.user.id){
           setUserInfo(response.data.user)
