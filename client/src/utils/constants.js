@@ -1,4 +1,4 @@
-export const HOST = "http://localhost:8000";
+export const HOST = "https://mern-chat-app-backend-o8uh.onrender.com";
 
 export const AUTH_ROUTES = "api/auth";
 export const SIGNUP_ROUTE =`${AUTH_ROUTES}/signup`
