@@ -59,11 +59,11 @@ const Auth = () => {
     if(handleLoginValidate()){
       const response = await apiClient.post(LOGIN_ROUTE,{email,password},        
         { headers : {
-          "Access-Control-Allow-Origin": '*'
+          "Access-Control-Allow-Origin": '*',          
         },
           withCredentials : true}
       )
-      console.log("mess",response)
+      // console.log("mess",response)
       if(response.status === 204){
         toast("Incorrect Credentials")        
       }
@@ -80,7 +80,7 @@ const Auth = () => {
       
     }
   } catch (error) {
-    toast.error(error.message)
+    toast.error("Internal server Error: ",error.message)
   }
     
 

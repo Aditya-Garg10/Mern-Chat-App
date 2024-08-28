@@ -48,12 +48,12 @@ export const Login = async (req, res, next) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json("Email and Password is Rewuired");
+      return res.status(400).json("Email and Password is Required");
     }
 
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json("No user exist with this Email");
+      return res.status(204).json("No user exist with this Email");
     }
     const auth = await compare(password, user.password);
     if (!auth) {
